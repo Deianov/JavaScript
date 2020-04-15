@@ -1,7 +1,6 @@
 function extractUniqueWords(args) {
 
     const uniqueWords = new Set()
-    const duplicated = new Set()
 
     for (const sentence of args) {
         const words = sentence.split(/[^\w]+/g).filter(Boolean)
