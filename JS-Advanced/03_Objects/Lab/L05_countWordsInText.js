@@ -1,10 +1,10 @@
 function countWordsInText(args) {
 
-    const wordsCount = {}
+    const wordsCount = {};
 
     for (const sentence of args) {
 
-        const words = args[0].split(/[^\w]+/g).filter(Boolean)
+        const words = args[0].split(/[^\w]+/g).filter(Boolean);
 
         for (const word of words) {
             if (wordsCount.hasOwnProperty(word)) {
@@ -17,4 +17,4 @@ function countWordsInText(args) {
     console.log(JSON.stringify(wordsCount))
 }
 
-countWordsInText(['Far too slow, you\'re far too slow.'])
+countWordsInText(['Far too slow, you\'re far too slow.']);

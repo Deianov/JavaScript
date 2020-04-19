@@ -24,4 +24,4 @@ function calorieObjects2(elements) {
 
 
 calorieObjects(['Yoghurt', 48, 'Rise', 138, 'Apple', 52]);
-console.log(calorieObjects2(['Yoghurt', 48, 'Rise', 138, 'Apple', 52]))
+console.log(calorieObjects2(['Yoghurt', 48, 'Rise', 138, 'Apple', 52]));

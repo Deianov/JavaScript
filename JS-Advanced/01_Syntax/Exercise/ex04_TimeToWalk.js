@@ -28,7 +28,7 @@ function timeToWalk2(steps, footLength, speed) {
     timeInSeconds = timeInSeconds % 60;
     const seconds = timeInSeconds | 0;
 
-    return(`${formatNumber(hours)}:${formatNumber(minutes)}:${formatNumber(seconds)}`)
+    return(`${formatNumber(hours)}:${formatNumber(minutes)}:${formatNumber(seconds)}`);
     
     function formatNumber(n){
         return n > 9 ? n : '0' + n;

@@ -1,14 +1,14 @@
 function printWithDelimiter(args) {
 
-    const del = args.pop()
+    const del = args.pop();
     console.log(args.join(del))
 }
 
-printWithDelimiter(['How about no?', 
+printWithDelimiter([
+'How about no?',
 'I',
 'will', 
 'not', 
 'do', 
 'it!', 
-'_']
-)
+'_']);

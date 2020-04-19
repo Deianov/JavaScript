@@ -1,8 +1,8 @@
 function scoreToHTML(jsonString) {
 
-    let html = '<table>\n   <tr><th>name</th><th>score</th></tr>\n'
+    let html = '<table>\n   <tr><th>name</th><th>score</th></tr>\n';
 
-    const persons = JSON.parse(jsonString)
+    const persons = JSON.parse(jsonString);
 
     for (const person of persons) {
 
@@ -22,4 +22,4 @@ function scoreToHTML(jsonString) {
     }
 }
 
-console.log(scoreToHTML(['[{"name":"Pesho","score":479},{"name":"Gosho","score":205}]']))
+console.log(scoreToHTML(['[{"name":"Pesho","score":479},{"name":"Gosho","score":205}]']));

@@ -1,9 +1,9 @@
 function populationInTowns(args) {
 
-    const towns = new Map()
+    const towns = new Map();
 
     for (const line of args) {
-        const [town, population] = line.split(/\s*<->\s*/)
+        const [town, population] = line.split(/\s*<->\s*/);
 
         if ( towns.has(town) ) {
             towns.set(town, towns.get(town) + Number(population))
@@ -22,4 +22,4 @@ populationInTowns([
 'Montana <-> 20000',
 'New York <-> 10000000',
 'Washington <-> 2345000',
-'Las Vegas <-> 1000000'])
+'Las Vegas <-> 1000000']);

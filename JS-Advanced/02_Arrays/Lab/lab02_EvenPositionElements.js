@@ -7,4 +7,4 @@ function evenPositions(args) {
     console.log(args.filter(isEvenIndex).join(' '))
 }
 
-evenPositions(['20', '30', '40'])
+evenPositions(['20', '30', '40']);

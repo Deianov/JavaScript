@@ -13,11 +13,11 @@ function sumNumbers(num) {
 
     while(n > 0) {
 
-        digit = n % 10;
+        const digit = n % 10;
         n = Math.trunc(n / 10);
 
         sum += digit;
-        isEquals = isEquals ? lastDigit == digit : false;
+        isEquals = isEquals ? lastDigit === digit : false;
     }
 
     console.log(isEquals);

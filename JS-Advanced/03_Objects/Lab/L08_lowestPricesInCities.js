@@ -1,9 +1,9 @@
 function lowestPricesInCities(args) {
 
-    const products = new Map()
+    const products = new Map();
 
     for (const productString of args) {
-        const [town, product, price] = productString.split(' | ')
+        const [town, product, price] = productString.split(' | ');
 
         if (!products.has(product)){
             products.set(product, new Map())
@@ -13,12 +13,12 @@ function lowestPricesInCities(args) {
 
     for (const [product, towns] of products) {
 
-        let minPrice = Number.MAX_VALUE
-        let minPriceTown
+        let minPrice = Number.MAX_VALUE;
+        let minPriceTown;
 
         for (const [town, price] of towns) {
             if (price < minPrice) {
-                minPrice = price
+                minPrice = price;
                 minPriceTown = town
             }
         }
@@ -34,4 +34,4 @@ lowestPricesInCities([
 'Sofia | Orange | 3',
 'Sofia | Peach | 2',
 'New York | Sample Product | 1000.1',
-'New York | Burger | 10'])
+'New York | Burger | 10']);

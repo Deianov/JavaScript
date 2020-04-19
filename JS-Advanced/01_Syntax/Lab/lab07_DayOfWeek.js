@@ -8,7 +8,7 @@ function solve(day) {
         'Friday' : 5,
         'Saturday' : 6,
         'Sunday' : 7
-    }
+    };
     const dayOfWeek = weekday[day];
 
     console.log(dayOfWeek ? dayOfWeek : 'error');

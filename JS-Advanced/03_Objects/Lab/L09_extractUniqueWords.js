@@ -1,15 +1,14 @@
 function extractUniqueWords(args) {
 
-    const uniqueWords = new Set()
+    const uniqueWords = new Set();
 
     for (const sentence of args) {
-        const words = sentence.split(/[^\w]+/g).filter(Boolean)
+        const words = sentence.split(/[^\w]+/g).filter(Boolean);
 
         for (const word of words) {
             uniqueWords.add(word.toLowerCase())
         }
     }
-
     console.log([...uniqueWords.values()].join(', '))
 }
 
@@ -21,4 +20,4 @@ extractUniqueWords([
 'Vestibulum ultrices ex massa, sit amet faucibus nunc aliquam ut.', 
 'Morbi in ipsum varius, pharetra diam vel, mattis arcu.', 
 'Integer ac turpis commodo, varius nulla sed, elementum lectus.', 
-'Vivamus turpis dui, malesuada ac turpis dapibus, congue egestas metus.'])
+'Vivamus turpis dui, malesuada ac turpis dapibus, congue egestas metus.']);

@@ -1,6 +1,6 @@
 function lastKNumbers(n, k) {
     
-    const result = [1]
+    const result = [1];
 
     for (let i = 1; i < n; i++) {
         result.push(getSum(getLastK(result, k)))
@@ -11,11 +11,11 @@ function lastKNumbers(n, k) {
     }
 
     function getLastK(arr, k) {
-        const len = arr.length
+        const len = arr.length;
         return arr.slice(len > k ? len - k: 0, len)
     }
 
     console.log(result.join(' '))
 }
 
-lastKNumbers(8, 2)
+lastKNumbers(8, 2);

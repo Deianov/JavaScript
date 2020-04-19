@@ -1,11 +1,11 @@
 function sumByTown(args) {
 
-    const result = {}
+    const result = {};
 
     for (let i = 0; i < args.length - 1; i += 2) {
 
-        const key = args[i]
-        const value = Number(args[i + 1])
+        const key = args[i];
+        const value = Number(args[i + 1]);
 
         if (result.hasOwnProperty(key)) {
             result[key] += value
@@ -24,4 +24,4 @@ sumByTown([
 'sofia',
 '5',
 'varna',
-'4'])
+'4']);
