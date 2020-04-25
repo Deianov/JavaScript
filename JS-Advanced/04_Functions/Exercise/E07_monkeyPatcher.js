@@ -4,16 +4,13 @@ function result(arg) {
     if (arg === 'downvote') this.downvotes++;
 
     function score() {
-        let up = this['upvotes'];
-        let down = this['downvotes'];
-        let totalVotes = up + down;
-        let maxVotes = Math.max(up, down);
-        let balance = up - down;
+        const up = this['upvotes'];
+        const down = this['downvotes'];
+        const totalVotes = up + down;
+        const maxVotes = Math.max(up, down);
+        const balance = up - down;
 
-        let inflate = 0;
-        if (totalVotes > 50) {
-           inflate = Math.ceil(maxVotes * 0.25);
-        }
+        const inflate = (totalVotes > 50) ? Math.ceil(maxVotes * 0.25) : 0;
 
         let rating = 'new';
         if (totalVotes >= 10) {
