@@ -1,14 +1,11 @@
 function growingWord() {
   const parent = document.getElementById('exercise');
   const colors = Array.from(parent.firstElementChild.children).map(e => e.textContent.toLowerCase());
+  const element = parent.lastElementChild;
 
   // change size
-  const element = parent.lastElementChild;
   const size = new Size(window.getComputedStyle(element).getPropertyValue('font-size'));
-
-  size.number = size.number || 1;
-  size.multiply(2);
-  element.style.fontSize = size.toString();
+  element.style.fontSize = size.changeIf(0, 1).multiply(2).toString();
 
   // change color
   let color = element.style.color;
@@ -29,6 +26,7 @@ function growingWord() {
       this.number = parseFloat(size) || 0; // parseInt(size.replace(/[^0-9.]+/g,'')) || 0
       this.suffix = size.replace(/[0-9.]+/g,'') || 'px';
       this.toString = () => `${this.number}${this.suffix}`;
-      this.multiply = (multiplier) => this.number *= multiplier
+      this.multiply = (multiplier) => {this.number *= multiplier; return this};
+      this.changeIf = (from, to) => { if (this.number === from) this.number = to; return this}
   }
 }
