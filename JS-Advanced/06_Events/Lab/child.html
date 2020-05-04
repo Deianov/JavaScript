@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            border: 1px solid black;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<p>Click the button get the node name of the DIV's first child node.</p>
+
+<div id="myDIV">
+    firstChild
+    <p>_P_ firstElementChild || Second child </p>
+    <span>_Span_ Second ElementChild || Fourth child</span>
+</div>
+
+<button onclick="myFunction()">Try it</button>
+<p><strong>Note:</strong> Whitespace inside elements is considered as text, and text is considered as nodes. Therefore, in this example, the first, third and fifth child of the div element is a #text node.</p>
+<ul id="items"></ul>
+
+<script>
+    function myFunction() {
+        const a = document.getElementById("myDIV").firstChild;
+        const b = a.nextSibling;
+        const c = b.nextSibling;
+        const d = c.nextSibling;
+
+        addList(`firstChild: ${a} `);
+        addList(`firstChild.textContent: ${a.textContent} `);
+        addList('');
+        addList(`firstChild.nextSibling: ${b} `);
+        addList(`firstChild.nextSibling.textContent: ${b.textContent} `);
+        addList('');
+        addList(`firstChild.nextSibling.nextSibling: ${c} `);
+        addList(`firstChild.nextSibling.nextSibling.textContent: ${c.textContent} `);
+        addList('');
+        addList(`firstChild.nextSibling.nextSibling.nextSibling: ${d} `);
+        addList(`firstChild.nextSibling.nextSibling.nextSibling.textContent: ${d.textContent} `);
+
+        const e = document.getElementById("myDIV").firstElementChild;
+        const f = e.nextElementSibling;
+
+        addList('');
+        addList(`firstElementChild: ${e.innerHTML}`)
+        addList(`firstElementChild.nextElementSibling: ${f.innerHTML}`)
+    }
+
+    function addList(text) {
+       const list = document.createElement('li');
+       list.appendChild(document.createTextNode(text));
+       document.getElementById('items').appendChild(list)
+    }
+</script>
+
+</body>
+</html>
