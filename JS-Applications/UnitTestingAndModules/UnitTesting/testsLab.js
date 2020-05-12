@@ -175,26 +175,6 @@ describe('createCalculator()', () => {
     assert.isObject(calc);
   });
 
-  /*
-    it('should have get() function', () => {
-      const hasProp = calc.hasOwnProperty('get');
-      assert.isTrue(hasProp);
-      assert.isFunction(calc.get);
-    });
-
-    it('should have subtract() function', () => {
-      const hasProp = calc.hasOwnProperty('subtract');
-      assert.isTrue(hasProp);
-      assert.isFunction(calc.subtract);
-    });
-
-    it('should have add() function', () => {
-      const hasProp = calc.hasOwnProperty('add');
-      assert.isTrue(hasProp);
-      assert.isFunction(calc.add);
-    });
-  */
-
   it('should return 0 after create', () => {
     const value = calc.get();
     assert.equal(value, 0);
