@@ -6,25 +6,20 @@ function ticTacToe(args) {
     const empty = false;
     let isPlayer1 = true;
 
-    const matrix = [
-        [empty, empty, empty],
-        [empty, empty, empty],
-        [empty, empty, empty]
-    ];
-    const rows = matrix.length;
-    const cols = matrix[0].length;
+    const rows = 3;
+    const cols = 3;
+    const matrix = new Array(rows).fill(0).map(row => new Array(cols).fill(empty));
 
-    const messages = [
-        `Player ${player1} wins!`,
-        `Player ${player2} wins!`,
-        'The game ended! Nobody wins :(',
-        'This place is already taken. Please choose another!'
-    ];
+    const message = {
+        winner: (name) => `Player ${name} wins!`,
+        nobody_wins: 'The game ended! Nobody wins :(',
+        already_taken: 'This place is already taken. Please choose another!'
+    };
 
     let turns = 1;
 
     for (let line of args) {
-        [row, col] = line.split(' ').map(Number);
+        const [row, col] = line.split(' ').map(Number);
 
         if (!isValid(row, col)) {
             continue
@@ -32,30 +27,32 @@ function ticTacToe(args) {
 
         if (!isEmpty(row, col)) {
             // player tries to make his turn on already taken place
-            console.log(messages[3]);
+            console.log(message.already_taken);
             continue
         }
 
+        // fill turn
         matrix[row][col] = isPlayer1 ? player1 : player2;
     
-        if ( checkForWinner() ) {
+        if (hasWinner() ) {
             // someone wins
-            console.log(messages[isPlayer1 ? 0 : 1]);
+            console.log(message.winner(isPlayer1 ? player1 : player2));
             printMatrix();
             return
         }
 
+        // change current player
         isPlayer1 = !isPlayer1;
         
         if ( turns++ === cols * rows ) {
             // there are no free spaces on the dashboard and nobody wins
-            console.log(messages[2]);
+            console.log(message.nobody_wins);
             printMatrix();
             return
         }
     }
 
-    function checkForWinner() { 
+    function hasWinner() { 
         return checkElements(getRows()) || checkElements(getCols()) || checkElements(getDiagonals())
     }
     function getRows() { 
@@ -109,4 +106,28 @@ ticTacToe([
 "1 2",
 "2 2",
 "2 1",
+"0 0"]);
+
+ticTacToe([
+"0 0",
+"0 0",
+"1 1",
+"0 1",
+"1 2",
+"0 2",
+"2 2",
+"1 2",
+"2 2",
+"2 1"]);
+
+ticTacToe([
+"0 1",
+"0 0",
+"0 2",
+"2 0",
+"1 0",
+"1 2",
+"1 1",
+"2 1",
+"2 2",
 "0 0"]);
